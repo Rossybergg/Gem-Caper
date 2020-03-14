@@ -36,6 +36,7 @@ public bool limitFrameRate;
             float vertical = Input.GetAxis("Vertical");
             Vector3 movement = new Vector3 (horizontal, 0.0f, vertical);
             Vector3 relativeMovement = Camera.main.transform.TransformVector(movement);
+            relativeMovement.y = 0f;
             body.AddForce (relativeMovement.normalized * speed * Time.deltaTime, ForceMode.Impulse);
         }
     }
