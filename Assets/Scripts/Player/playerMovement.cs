@@ -10,6 +10,16 @@ public class playerMovement : MonoBehaviour {
 public float jumpForce;
 public float fallMultiplier = 2.5f;
 public float lowJumpMultiplyer = 2f;
+public int frameRate;
+public bool limitFrameRate;
+
+
+    void Start()
+    {
+        if (limitFrameRate){
+        Application.targetFrameRate = frameRate;
+        }
+    }
     private void Update() {
         playerControl();
     }
@@ -35,7 +45,7 @@ public float lowJumpMultiplyer = 2f;
             body.AddForce( 0 , jumpForce , 0, ForceMode.Impulse);
             marbleOnGround = false;
         };
-         if ( body.velocity.y < -5 ) {
+         if ( body.velocity.y < -2 ) {
           body.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
       }
     }
