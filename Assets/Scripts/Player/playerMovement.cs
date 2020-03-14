@@ -21,11 +21,13 @@ public float lowJumpMultiplyer = 2f;
     }
 
     void movement() {
+        if (marbleOnGround) {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             Vector3 movement = new Vector3 (horizontal, 0.0f, vertical);
             Vector3 relativeMovement = Camera.main.transform.TransformVector(movement);
-            body.AddForce (relativeMovement * speed * Time.deltaTime);
+            body.AddForce (relativeMovement.normalized * speed * Time.deltaTime, ForceMode.Impulse);
+        }
     }
 
     void jump() {
