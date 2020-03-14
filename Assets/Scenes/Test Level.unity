@@ -443,8 +443,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375062664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.739, y: 3.739, z: 3.739}
+  m_LocalPosition: {x: 0, y: 0, z: -0.12}
+  m_LocalScale: {x: 9.150829, y: 9.150829, z: 9.150829}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -485,7 +485,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!135 &1559928695
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -574,8 +574,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1559928694}
-  speed: 10
+  speed: 25
   marbleOnGround: 1
   jumpForce: 10
-  fallMultiplier: 5
-  lowJumpMultiplyer: 2.5
+  fallMultiplier: 3
+  lowJumpMultiplyer: 1.5
+  frameRate: 60
+  limitFrameRate: 0
